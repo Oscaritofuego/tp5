@@ -1,5 +1,7 @@
 package example;
 // Modif utilisateur 2
+// Modif utilisateur 1
+
 public class Inversor {
 	/**
 	 * @param s la chaine à inverser (non nulle)
