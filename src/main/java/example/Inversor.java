@@ -12,7 +12,7 @@ public class Inversor {
 
 		// Cette implémentation est très inefficace, pourquoi ?
 		String result = "";
-		for (int i = 0; i < s.length(); i++) {
+		for (int i = 1; i < s.length(); i++) {
 			result = s.charAt(i) + result;
 		}
 		return result;
