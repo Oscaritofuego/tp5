@@ -1,6 +1,4 @@
 package example;
-// Modif utilisateur 2
-// Modif utilisateur 1
 
 public class Inversor {
 	/**
