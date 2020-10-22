@@ -1,7 +1,11 @@
 package example;
 
-import org.junit.*;
-import static org.junit.Assert.*;
+import org.junit.jupiter.api.AfterEach;
+import static org.junit.jupiter.api.Assertions.assertFalse;
+import static org.junit.jupiter.api.Assertions.assertTrue;
+import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.Test;
+
 import static org.mockito.Mockito.*;
 
 public class PalindromeCheckerMockitoTest {
@@ -9,7 +13,7 @@ public class PalindromeCheckerMockitoTest {
 	PalindromeCheckerDI checker;
 	Inversor inversor;
 
-	@Before
+	@BeforeEach
 	public void setUp() {
 		// On créee le "bouchon"
 		inversor = mock(Inversor.class);
@@ -20,7 +24,7 @@ public class PalindromeCheckerMockitoTest {
 		checker = new PalindromeCheckerDI(inversor);
 	}
 
-	@After
+	@AfterEach
 	public void tearDown() {
 		checker = null;
 		inversor = null;
@@ -28,14 +32,16 @@ public class PalindromeCheckerMockitoTest {
 
 	@Test
 	public void testVraiPalindrome() {
-		assertTrue(checker.estPalindrome("kayak"));
+		assertTrue(checker.estPalindrome("kayak"),
+                           "'kayak' est un palindrome");
 		// On vérifie les appels de méthode reçus par le bouchon (optionnel)
 		verify(inversor).inverse("kayak");
 	}
 
 	@Test
 	public void testFauxPalindrome() {
-		assertFalse(checker.estPalindrome("Bastide"));
+		assertFalse(checker.estPalindrome("Bastide"),
+                           "'Bastide' n'est pas un palindrome");
 		// On vérifie les appels de méthode reçus par le bouchon (optionnel)
 		verify(inversor).inverse("Bastide");
 	}

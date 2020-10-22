@@ -1,11 +1,18 @@
 package example;
 
-import org.junit.*;
-import static org.junit.Assert.*;
+import org.junit.jupiter.api.AfterAll;
+import org.junit.jupiter.api.AfterEach;
+import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertFalse;
+import static org.junit.jupiter.api.Assertions.assertThrows;
+import static org.junit.jupiter.api.Assertions.assertTrue;
+import static org.junit.jupiter.api.Assertions.fail;
+import org.junit.jupiter.api.BeforeAll;
+import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.Test;
 
 /** 
  * Un "bouchon" spécifique pour ce test
- * @author rbastide
  */
 class InversorBouchon extends Inversor {
 	@Override
@@ -26,7 +33,7 @@ public class PalindromeCheckerBouchonTest {
 	PalindromeCheckerDI checker;
 	Inversor inversor;
 
-	@Before
+	@BeforeEach
 	public void setUp() {
 		// On créee le "bouchon"
 		inversor = new InversorBouchon();
@@ -34,7 +41,7 @@ public class PalindromeCheckerBouchonTest {
 		checker = new PalindromeCheckerDI(inversor);
 	}
 
-	@After
+	@AfterEach
 	public void tearDown() {
 		checker = null;
 		inversor = null;
@@ -42,12 +49,14 @@ public class PalindromeCheckerBouchonTest {
 
 	@Test
 	public void testVraiPalindrome() {
-		assertTrue(checker.estPalindrome("kayak"));
+		assertTrue(checker.estPalindrome("kayak"),
+                        "'kayak' est un palindrome");
 	}
 
 	@Test
 	public void testFauxPalindrome() {
-		assertFalse(checker.estPalindrome("Bastide"));
+		assertFalse(checker.estPalindrome("Bastide"),
+                        "'Bastide' n'est pas un palindrome");
 	}
 
 }
