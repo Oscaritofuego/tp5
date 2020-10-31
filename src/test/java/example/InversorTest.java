@@ -3,9 +3,7 @@ package example;
 import org.junit.jupiter.api.AfterAll;
 import org.junit.jupiter.api.AfterEach;
 import static org.junit.jupiter.api.Assertions.assertEquals;
-import static org.junit.jupiter.api.Assertions.assertFalse;
 import static org.junit.jupiter.api.Assertions.assertThrows;
-import static org.junit.jupiter.api.Assertions.assertTrue;
 import static org.junit.jupiter.api.Assertions.fail;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.BeforeEach;
@@ -60,7 +58,7 @@ public class InversorTest {
 	@Test
 	public void testForExceptionV2() {
                 assertThrows(IllegalArgumentException.class, () -> {
-        		inversor.inverse(null); // Cette ligne doit lever une exception
+        		inversor.inverse(null); 
                 }, "Cet appel doit lever une exception");
 	}
 }
