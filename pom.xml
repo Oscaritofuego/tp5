@@ -13,7 +13,7 @@
     </properties>    
         
     <build>
-        
+        <!-- git comment -->
         <plugins>
             <plugin>
                 <artifactId>maven-compiler-plugin</artifactId>
