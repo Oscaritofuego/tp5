@@ -6,6 +6,7 @@
     <version>1.0</version>
     <packaging>jar</packaging>
     
+<!-- conflicting comment -->
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <java.version>8</java.version>
