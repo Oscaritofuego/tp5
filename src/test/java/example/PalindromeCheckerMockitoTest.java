@@ -15,7 +15,7 @@ public class PalindromeCheckerMockitoTest {
 
 	@BeforeEach
 	public void setUp() {
-		// On créee le "bouchon"
+		// On crée le "bouchon"
 		inversor = mock(Inversor.class);
 		// On définit les résultats que le bouchon doit renvoyer pendant le test
 		when(inversor.inverse("kayak")).thenReturn("kayak");
