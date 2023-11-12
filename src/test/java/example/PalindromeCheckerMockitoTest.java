@@ -8,7 +8,7 @@ import org.junit.jupiter.api.Test;
 
 import static org.mockito.Mockito.*;
 
-public class PalindromeCheckerMockitoTest {
+class PalindromeCheckerMockitoTest {
 	// On déclare les objets nécessaires aux tests
 	PalindromeCheckerDI checker;
 	Inversor inversor;
@@ -31,7 +31,7 @@ public class PalindromeCheckerMockitoTest {
 	}
 
 	@Test
-	public void testVraiPalindrome() {
+	void testVraiPalindrome() {
 		assertTrue(checker.estPalindrome("kayak"),
                            "'kayak' est un palindrome");
 		// On vérifie les appels de méthode reçus par le bouchon (optionnel)
@@ -39,7 +39,7 @@ public class PalindromeCheckerMockitoTest {
 	}
 
 	@Test
-	public void testFauxPalindrome() {
+	void testFauxPalindrome() {
 		assertFalse(checker.estPalindrome("Bastide"),
                            "'Bastide' n'est pas un palindrome");
 		// On vérifie les appels de méthode reçus par le bouchon (optionnel)

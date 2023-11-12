@@ -24,7 +24,7 @@ class InversorBouchon extends Inversor {
 	}
 }
 
-public class PalindromeCheckerBouchonTest {
+class PalindromeCheckerBouchonTest {
 	// On déclare les objets nécessaires aux tests
 	PalindromeCheckerDI checker;
 	Inversor inversor;
@@ -44,12 +44,12 @@ public class PalindromeCheckerBouchonTest {
 	}
 
 	@Test
-	public void testVraiPalindrome() {
+	void testVraiPalindrome() {
 		assertTrue(checker.estPalindrome("kayak"), "'kayak' est un palindrome");
 	}
 
 	@Test
-	public void testFauxPalindrome() {
+	void testFauxPalindrome() {
 		assertFalse(checker.estPalindrome("Bastide"), "'Bastide' n'est pas un palindrome");
 	}
 
